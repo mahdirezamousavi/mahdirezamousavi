@@ -1,1 +1,683 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b25">
+  <meta name="description" content="پرتال جامع و رسمی سید مهدی رضا موسوی؛ اخبار، فعالیت‌ها، دیدگاه‌ها و برنامه‌ها">
+  <title>پرتال جامع و رسمی سید مهدی رضا موسوی</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --green: #153b30;
+      --green-dark: #0d261f;
+      --gold: #c5a568;
+      --cream: #f7f5ef;
+      --white: #ffffff;
+      --text: #26342f;
+      --muted: #75817b;
+      --border: #e8e8e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--green-dark);
+      color: #e9e5d8;
+      padding: 8px 6%;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 18px #00000018;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 88px;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-mark {
+      width: 53px;
+      height: 53px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .brand-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .brand-subtitle {
+      color: #d4c7a7;
+      font-size: 11px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      color: #f2f2ed;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 1px solid #ffffff55;
+      border-radius: 7px;
+      padding: 5px 12px;
+      font-family: inherit;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, #0d261fef, #153b30e8),
+        radial-gradient(circle at 80% 30%, #54745a, #102b25);
+      color: white;
+      padding: 90px 22px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border: 1px solid #c5a56835;
+      border-radius: 50%;
+      top: -180px;
+      left: -90px;
+    }
+
+    .hero-content {
+      max-width: 1120px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 {
+      font-size: clamp(27px, 5vw, 48px);
+      line-height: 1.8;
+      font-weight: 900;
+      max-width: 750px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #e0e7e2;
+      font-size: 15px;
+      max-width: 650px;
+      margin-top: 18px;
+      line-height: 2.3;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #172b22;
+    }
+
+    .btn-outline {
+      border: 1px solid #ffffff80;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .section-heading small {
+      color: #a1844d;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: 26px;
+      font-weight: 900;
+      margin-top: 5px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .portrait {
+      min-height: 330px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, #d9d3c3, #b9c2b5);
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      text-align: center;
+      padding: 25px;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px #00000012;
+    }
+
+    .portrait span {
+      display: block;
+      font-size: 65px;
+      line-height: 1.5;
+    }
+
+    .portrait p {
+      font-size: 12px;
+    }
+
+    .about-text h3 {
+      color: var(--green);
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .about-text p {
+      font-size: 14px;
+      color: #5d6963;
+      line-height: 2.5;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px #0000000c;
+      border-color: #d3bd8e;
+    }
+
+    .card-icon {
+      width: 47px;
+      height: 47px;
+      border-radius: 8px;
+      background: #edf1eb;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      color: var(--green);
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 2.2;
+    }
+
+    .news-section {
+      background: #eeeee7;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .news-image {
+      height: 145px;
+      background: linear-gradient(135deg, #244a3b, #a48c5e);
+      display: grid;
+      place-items: center;
+      color: #ffffffb0;
+      font-size: 34px;
+    }
+
+    .news-body {
+      padding: 20px;
+    }
+
+    .news-body small {
+      color: #a1844d;
+      font-size: 11px;
+    }
+
+    .news-body h3 {
+      color: var(--green);
+      font-size: 15px;
+      margin: 8px 0;
+    }
+
+    .news-body p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .quote {
+      background: var(--green);
+      color: white;
+      padding: 55px 22px;
+      text-align: center;
+    }
+
+    .quote-inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .quote-mark {
+      color: var(--gold);
+      font-size: 45px;
+      line-height: 1.3;
+    }
+
+    .quote h2 {
+      font-size: 23px;
+      margin: 10px 0;
+    }
+
+    .quote p {
+      color: #d7e0d9;
+      font-size: 13px;
+    }
+
+    .contact-box {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 9px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    footer p {
+      font-size: 11px;
+      color: #c3cec6;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        min-height: 75px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--green-dark);
+        padding: 18px 25px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        min-height: 250px;
+      }
+
+      .cards,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 22px 75px;
+      }
+
+      .section {
+        padding: 55px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>پایگاه اطلاع‌رسانی و ارتباط رسمی</span>
+    <span>پرتال جامع سید مهدی رضا موسوی</span>
+  </div>
+
+  <header>
+    <nav class="nav">
+      <a href="#" class="brand">
+        <div class="brand-mark">م</div>
+        <div>
+          <div class="brand-title">سید مهدی رضا موسوی</div>
+          <div class="brand-subtitle">پرتال جامع و رسمی</div>
+        </div>
+      </a>
+
+      <button class="menu-button" onclick="toggleMenu()" aria-label="باز کردن منو">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">صفحه نخست</a>
+        <a href="#about">درباره</a>
+        <a href="#activities">فعالیت‌ها</a>
+        <a href="#news">اخبار</a>
+        <a href="#contact">ارتباط با ما</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-label">پایگاه رسمی اطلاع‌رسانی</div>
+        <h1>
+          پرتال جامع و رسمی<br>
+          <span>سید مهدی رضا موسوی</span>
+        </h1>
+        <p>
+          پایگاه معرفی فعالیت‌ها، دیدگاه‌ها، برنامه‌ها،
+          اخبار و رویدادهای مرتبط با سید مهدی رضا موسوی.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#about" class="btn btn-gold">آشنایی بیشتر</a>
+          <a href="#news" class="btn btn-outline">مشاهده اخبار</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <small>معرفی و شناخت</small>
+        <h2>درباره سید مهدی رضا موسوی</h2>
+        <p>معرفی شخصیت، سوابق، فعالیت‌ها و حوزه‌های کاری</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="portrait">
+          <div>
+            <span>✦</span>
+            <p>تصویر رسمی سید مهدی رضا موسوی</p>
+            <p>تصویر اصلی در مرحله بعد جایگزین می‌شود.</p>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <h3>سید مهدی رضا موسوی</h3>
+          <p>
+            به پرتال جامع و رسمی سید مهدی رضا موسوی خوش آمدید.
+            این پایگاه با هدف معرفی فعالیت‌ها، انتشار اخبار،
+            ارائه دیدگاه‌ها و ایجاد بستری برای ارتباط و اطلاع‌رسانی
+            راه‌اندازی شده است.
+          </p>
+          <p>
+            اطلاعات تکمیلی درباره زندگی‌نامه، سوابق علمی،
+            فرهنگی، اجرایی و فعالیت‌های اجتماعی در این بخش
+            منتشر خواهد شد.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="section-heading">
+        <small>حوزه‌های فعالیت</small>
+        <h2>فعالیت‌ها و برنامه‌ها</h2>
+        <p>بخش‌های مختلف فعالیت و برنامه‌های قابل معرفی در پرتال</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">✦</div>
+          <h3>فعالیت‌های فرهنگی</h3>
+          <p>معرفی برنامه‌ها، رویدادها و فعالیت‌های فرهنگی و اجتماعی.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▤</div>
+          <h3>فعالیت‌های علمی و آموزشی</h3>
+          <p>انتشار مطالب، پژوهش‌ها، دیدگاه‌ها و برنامه‌های آموزشی.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">◈</div>
+          <h3>فعالیت‌های جهادی</h3>
+          <p>معرفی طرح‌ها، اقدامات و برنامه‌های جهادی و تشکیلاتی.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="news-section" id="news">
+      <div class="section">
+        <div class="section-heading">
+          <small>تازه‌ترین مطالب</small>
+          <h2>اخبار و اطلاعیه‌ها</h2>
+          <p>آخرین خبرها، گزارش‌ها و اطلاعیه‌های رسمی</p>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-image">✧</div>
+            <div class="news-body">
+              <small>اخبار و رویدادها</small>
+              <h3>بخش اخبار و گزارش‌های رسمی</h3>
+              <p>اخبار و گزارش‌های جدید در این قسمت منتشر خواهد شد.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image">▤</div>
+            <div class="news-body">
+              <small>اطلاعیه‌ها</small>
+              <h3>اطلاعیه‌ها و برنامه‌ها</h3>
+              <p>اطلاعیه‌ها و برنامه‌های رسمی از این بخش قابل مشاهده خواهد بود.</p>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image">✦</div>
+            <div class="news-body">
+              <small>یادداشت‌ها</small>
+              <h3>یادداشت‌ها و دیدگاه‌ها</h3>
+              <p>یادداشت‌ها، تحلیل‌ها و مطالب منتشرشده در این بخش قرار می‌گیرند.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="quote-inner">
+        <div class="quote-mark">❝</div>
+        <h2>اندیشه، آگاهی و مسئولیت‌پذیری</h2>
+        <p>پایگاهی برای معرفی فعالیت‌ها، انتشار دیدگاه‌ها و ارتباط مؤثر با مخاطبان</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <small>ارتباط و همراهی</small>
+        <h2>ارتباط با ما</h2>
+        <p>برای ارتباط و ارسال پیام، اطلاعات تماس رسمی در این قسمت قرار خواهد گرفت.</p>
+      </div>
+
+      <div class="contact-box">
+        <p>
+          اطلاعات تماس، نشانی شبکه‌های اجتماعی و راه‌های ارتباطی
+          پس از تکمیل اطلاعات رسمی در این بخش درج می‌شوند.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>پرتال جامع و رسمی سید مهدی رضا موسوی</strong>
+    <p>تمام حقوق این پایگاه محفوظ است.</p>
+    <p>© <span id="year"></span> | پایگاه اطلاع‌رسانی رسمی</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('show');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
